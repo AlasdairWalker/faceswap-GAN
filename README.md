@@ -6,44 +6,44 @@ Adding Adversarial loss and perceptual loss (VGGface) to deepfakes'(reddit user)
 | ------------- | ------------- |    
 | 2018-08-27      | **Colab support:** A [colab notebook](https://colab.research.google.com/github/AlasdairWalker/faceswap-GAN/blob/regularizer-fix/colab_demo/faceswap-GAN_colab_demo.ipynb) for faceswap-GAN v2.2 is provided.| 
 | 2018-07-25      | **Data preparation:** Add a [new notebook](https://github.com/AlasdairWalker/faceswap-GAN/blob/regularizer-fix/MTCNN_video_face_detection_alignment.ipynb) for video pre-processing in which MTCNN is used for face detection as well as face alignment.| 
-| 2018-06-29      | **Model architecture**: faceswap-GAN v2.2 now supports different output resolutions: 64x64, 128x128, and 256x256. Default `RESOLUTION = 64` can be changed in the config cell of [v2.2 notebook](https://github.com/shaoanlu/faceswap-GAN/blob/master/FaceSwap_GAN_v2.2_train_test.ipynb).|
+| 2018-06-29      | **Model architecture**: faceswap-GAN v2.2 now supports different output resolutions: 64x64, 128x128, and 256x256. Default `RESOLUTION = 64` can be changed in the config cell of [v2.2 notebook](https://github.com/AlasdairWalker/faceswap-GAN/blob/regularizer-fix/FaceSwap_GAN_v2.2_train_test.ipynb).|
 | 2018-06-25      | **New version**: faceswap-GAN v2.2 has been released. The main improvements of v2.2 model are its capability of generating realistic and consistent eye movements (results are shown below, or Ctrl+F for eyes), as well as higher video quality with face alignment.|
 | 2018-06-06      | **Model architecture**: Add a self-attention mechanism proposed in [SAGAN](https://arxiv.org/abs/1805.08318) into V2 GAN model. (Note: There is still no official code release for SAGAN, the implementation in this repo. could be wrong. We'll keep an eye on it.)|
 
 ## Google Colab support
-Here is a [playground notebook](https://colab.research.google.com/github/shaoanlu/faceswap-GAN/blob/master/colab_demo/faceswap-GAN_colab_demo.ipynb) for faceswap-GAN v2.2 on Google Colab. Users can train their own model in the browser.
+Here is a [playground notebook](https://colab.research.google.com/github/AlasdairWalker/faceswap-GAN/blob/regularizer-fix/colab_demo/faceswap-GAN_colab_demo.ipynb) for faceswap-GAN v2.2 on Google Colab. Users can train their own model in the browser.
 
 [Update 2019/10/04] There seems to be import errors in the latest Colab environment due to inconsistent version of packages. Please make sure that the Keras and TensorFlow follow the version number shown in the requirement section below.
 
 ## Descriptions  
 ### faceswap-GAN v2.2
-* [FaceSwap_GAN_v2.2_train_test.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/FaceSwap_GAN_v2.2_train_test.ipynb)
+* [FaceSwap_GAN_v2.2_train_test.ipynb](https://github.com/AlasdairWalker/faceswap-GAN/blob/regularizer-fix/FaceSwap_GAN_v2.2_train_test.ipynb)
   - Notebook for model training of faceswap-GAN model version 2.2.
   - This notebook also provides code for still image transformation at the bottom.
-  - Require additional training images generated through [prep_binary_masks.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/prep_binary_masks.ipynb).
+  - Require additional training images generated through [prep_binary_masks.ipynb](https://github.com/AlasdairWalker/faceswap-GAN/blob/regularizer-fix/prep_binary_masks.ipynb).
   
-* [FaceSwap_GAN_v2.2_video_conversion.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/FaceSwap_GAN_v2.2_video_conversion.ipynb)
+* [FaceSwap_GAN_v2.2_video_conversion.ipynb](https://github.com/AlasdairWalker/faceswap-GAN/blob/regularizer-fix/FaceSwap_GAN_v2.2_video_conversion.ipynb)
   - Notebook for video conversion of faceswap-GAN model version 2.2.
   - Face alignment using 5-points landmarks is introduced to video conversion.
   
-* [prep_binary_masks.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/prep_binary_masks.ipynb)
+* [prep_binary_masks.ipynb](https://github.com/AlasdairWalker/faceswap-GAN/blob/regularizer-fix/prep_binary_masks.ipynb)
   - Notebook for training data preprocessing. Output binary masks are save in `./binary_masks/faceA_eyes` and `./binary_masks/faceB_eyes` folders.
-  - Require [face_alignment](https://github.com/1adrianb/face-alignment) package. (An alternative method for generating binary masks (not requiring `face_alignment` and `dlib` packages) can be found in [MTCNN_video_face_detection_alignment.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/MTCNN_video_face_detection_alignment.ipynb).) 
+  - Require [face_alignment](https://github.com/1adrianb/face-alignment) package. (An alternative method for generating binary masks (not requiring `face_alignment` and `dlib` packages) can be found in [MTCNN_video_face_detection_alignment.ipynb](https://github.com/AlasdairWalker/faceswap-GAN/blob/regularizer-fix/MTCNN_video_face_detection_alignment.ipynb).) 
   
-* [MTCNN_video_face_detection_alignment.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/MTCNN_video_face_detection_alignment.ipynb)
+* [MTCNN_video_face_detection_alignment.ipynb](https://github.com/AlasdairWalker/faceswap-GAN/blob/regularizer-fix/MTCNN_video_face_detection_alignment.ipynb)
   - This notebook performs face detection/alignment on the input video. 
   - Detected faces are saved in `./faces/raw_faces` and `./faces/aligned_faces` for non-aligned/aligned results respectively.
-  - Crude eyes binary masks are also generated and saved in `./faces/binary_masks_eyes`. These binary masks can serve as a suboptimal alternative to masks generated through [prep_binary_masks.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/prep_binary_masks.ipynb). 
+  - Crude eyes binary masks are also generated and saved in `./faces/binary_masks_eyes`. These binary masks can serve as a suboptimal alternative to masks generated through [prep_binary_masks.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/regularizer-fix/prep_binary_masks.ipynb). 
   
 **Usage**
-1. Run [MTCNN_video_face_detection_alignment.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/MTCNN_video_face_detection_alignment.ipynb) to extract faces from videos. Manually move/rename the aligned face images into `./faceA/` or `./faceB/` folders.
-2. Run [prep_binary_masks.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/prep_binary_masks.ipynb) to generate binary masks of training images. 
+1. Run [MTCNN_video_face_detection_alignment.ipynb](https://github.com/AlasdairWalker/faceswap-GAN/blob/regularizer-fix/MTCNN_video_face_detection_alignment.ipynb) to extract faces from videos. Manually move/rename the aligned face images into `./faceA/` or `./faceB/` folders.
+2. Run [prep_binary_masks.ipynb](https://github.com/AlasdairWalker/faceswap-GAN/blob/regularizer-fix/prep_binary_masks.ipynb) to generate binary masks of training images. 
     - You can skip this pre-processing step by (1) setting `use_bm_eyes=False` in the config cell of the train_test notebook, or (2) use low-quality binary masks generated in step 1.
-3. Run [FaceSwap_GAN_v2.2_train_test.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/FaceSwap_GAN_v2.2_train_test.ipynb) to train  models.
-4. Run  [FaceSwap_GAN_v2.2_video_conversion.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/FaceSwap_GAN_v2.2_video_conversion.ipynb) to create videos using the trained models in step 3. 
+3. Run [FaceSwap_GAN_v2.2_train_test.ipynb](https://github.com/AlasdairWalker/faceswap-GAN/blob/master/FaceSwap_GAN_v2.2_train_test.ipynb) to train  models.
+4. Run  [FaceSwap_GAN_v2.2_video_conversion.ipynb](https://github.com/AlasdairWalker/faceswap-GAN/blob/master/FaceSwap_GAN_v2.2_video_conversion.ipynb) to create videos using the trained models in step 3. 
   
 ### Miscellaneous
-* [faceswap-GAN_colab_demo.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/colab_demo/faceswap-GAN_colab_demo.ipynb)
+* [faceswap-GAN_colab_demo.ipynb](https://github.com/AlasdairWalker/faceswap-GAN/blob/master/colab_demo/faceswap-GAN_colab_demo.ipynb)
   - An all-in-one notebook for demostration purpose that can be run on Google colab.
   
 ### Training data format 
